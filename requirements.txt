@@ -1,0 +1,5 @@
+selenium==3.11.0
+PyAutoGUI==0.9.36
+keyboard==0.13.1
+numpy==1.14.2
+opencv_contrib_python==3.4.0.12
