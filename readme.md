@@ -1,4 +1,4 @@
-    # Facebook Eraser
+# Facebook Eraser
 
 In light of the recent Facebook controveries, I built an application to erase your data from Facebook, so that someone else's doesn't steal it first. There are a number of existing apps that already do this, but I wanted to try the challenge out for myself.  
 
@@ -8,7 +8,7 @@ This app works by launching a browser with Selenium, logging in to Facebook, and
 
 Next a screenshot is taken, OpenCV performs template matching to find the locations of all the 'delete' icons, and then Pyautogui navigates to those locations to delete the post, and scroll down if necessary. 
 
-<img src = "extras/unliker.gif"></img>
+<img src = "extras/unliker.gif" width="600"></img>
 
 #### What this does: 
 - Removes all your comments and likes from Facebook.
@@ -16,13 +16,11 @@ Next a screenshot is taken, OpenCV performs template matching to find the locati
 
 #### What this doesn't do: 
 - Permanely delete data from Facebook servers
-- Delete posts, photos or videos, Messenger data
-     - too much variety with button types
+- Delete posts, photos or videos, Messenger data -- too much variety with button types
 - Completely stop Facebook from tracking you
-     - watch out for cookies and trackers
 - Sends any data to me or anyone else
 
-# Installation and Useage
+# Installation and Usage
 - [Download a copy of your Facebook data](https://www.facebook.com/help/212802592074644?helpref=faq_content) (optional)
 - Install Python 3.X (Anaconda ideally)
 - Run `pip install -r requirements.txt`
@@ -48,7 +46,7 @@ This has only been tested on Windows 10 running a Selenium Firefox driver. Other
 4. If the app scrolls to the end and reports "no more posts to show", then manually click on the `year` bar to go further back in time. 
 5. For other bugs, kindly submit an issue report. 
 
-<img src = "extras/troubleshoot.png"></img>
+<img src = "extras/troubleshoot.png" width="600"></img>
 
 ---
 
