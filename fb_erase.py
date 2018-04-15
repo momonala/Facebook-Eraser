@@ -25,12 +25,20 @@ def click(where):
 
 
 # read in the login info
-with open('login.txt', 'r') as f: 
-    usrnm, pw, fb_name = [x.replace('\n', '').strip() for x in f.readlines()]
+try:
+    with open('login.txt', 'r') as f: 
+        usrnm, pw, fb_name = [x.replace('\n', '').strip() for x in f.readlines()]
+except FileNotFoundError:
+    print('ERROR: login.txt file does not exist!')
+    print('Create it with this format: \n\nemail\npassword\nfacebook username')
+    sys.exit()
 
+if len(sys.argv) == 1:
+    print('ERROR Must specify "likes" or ""comments as command line arg')
+    sys.exit()
 post_type = sys.argv[1]
 if post_type != 'likes' and post_type != 'comments':
-    print('Must type "likes" or ""comments')
+    print('ERROR Must specify "likes" or "comments" as command line arg')
     sys.exit()
 
 # some parameters
@@ -67,14 +75,24 @@ click('refresh')
 
 # DELETE SOME SHIT
 deleting_enabled = False
-print('STARTING -- press "d" to enable deleting')
+print('STARTING -- deleting disabled')
+print('press "d" to toggle deleting mode')
+print('press "p" to pause')
+print('press "q" to quit')
 while True:
-    # if key 'q' is pressed end script
     if keyboard.is_pressed('q'):
         break
+    if keyboard.is_pressed('p'):
+        print('PAUSED. Press Enter to unpause.')
+        input()
+        print('UNPAUSED')
     if keyboard.is_pressed('d'):
-        deleting_enabled = True
-        print('DELETING ENABLED')
+        if deleting_enabled:
+            deleting_enabled = False
+            print('DELETING DISABLED')
+        else:
+            deleting_enabled = True
+            print('DELETING ENABLED')
 
     # take a screeshot, --> grayscale, crop the search space
     img = cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_BGR2GRAY)
@@ -93,7 +111,6 @@ while True:
         if deleting_enabled:
             pyautogui.moveRel(0, 60)
             pyautogui.click()
-            print(loc)
         sleep(1)
     else:
         pyautogui.scroll(-50)

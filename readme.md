@@ -50,19 +50,20 @@ This has only been tested on Windows 10 running a Selenium Firefox driver. Other
 
 ---
 
-# Disclaimer 
-This irreversibly deletes your Facebook activity! I do not take responsiblity for your useage. Now before you say anything, I know that its unlikely that Facebook actually deletes the data. 
+# Disclaimer
+
+This irreversibly deletes your Facebook activity! I do not take responsibility for your usage. Now before you say anything, I know that its unlikely that Facebook actually deletes the data.
 
 Perusing around the [Terms and Conditions](https://www.facebook.com/help/356107851084108), I learned that
 Facebook only guarantees deletion of ***all*** content when an [account is deleted](https://www.facebook.com/help/224562897555674?helpref=faq_content).
 
 > "*When you choose to delete something you shared on Facebook, we remove it from the site. Some of this information is permanently deleted from our servers; however, some things can only be deleted when you permanently delete your account.*"
 
-Addtionally, for a databse driven application like Facebook, deleting rows of data can actually lead to orphan records and/or potential bugs. Instead, my guess is that data which is no longer needed is simply *marked* as deleted, and then excluded from view when data is requested an application. 
+Additionally, for a database driven application like Facebook, deleting rows of data can actually lead to orphan records and/or potential bugs. Instead, my guess is that data which is no longer needed is simply marked as deleted, and then excluded from view when data is requested an application.
 
-In short, Facebook may (somewhat understandably) never truly delete data, but at least it becomes unavailble to users and 3rd part developers. In theory, it might still easily be recovered if someone like the government or the FBI, requested it.
+In short, Facebook may (somewhat understandably) never truly delete data, but at least it becomes unavailable to users and 3rd part developers. In theory, it might still easily be recovered if someone like the government or the FBI, requested it.
 
-To be honest, its the 3rd party developers that are of biggest concern. A 3rd party dev may get their account banned or a slap on the wrist for violating rules, but Facebook faces larger consequences for data breaches under their watch. For this reason, hiding Facebook activity with an app like this is a good step forward, but one of many we have to take.
+To be honest, its the 3rd party developers that are of biggest concern. A 3rd party dev. may get their account banned or a slap on the wrist for violating rules, but Facebook faces larger consequences for data breaches under their watch. For this reason, hiding Facebook activity with an app like this is a good step forward, but one of many we have to take.
 
 ---
 Happy deleting 
